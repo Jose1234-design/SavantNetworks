@@ -94,7 +94,8 @@ nav.primary > a:hover,nav.primary > a.active{color:var(--on-navy);border-color:v
 @media (max-width:900px){.hero-grid{grid-template-columns:1fr}}
 .hero h1{color:#fff}
 .hero p.lede{color:var(--on-navy-muted)}
-.hero-schematic{aspect-ratio:4/3}
+.hero-schematic{aspect-ratio:4/3;display:flex;align-items:center;justify-content:center}
+.hero-schematic img{max-width:100%;max-height:100%;width:auto;height:auto;border-radius:6px;border:1px solid var(--navy-line)}
 .eyebrow{display:flex;align-items:center;gap:.6em;margin-bottom:1rem}
 .eyebrow .dot{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 0 3px rgba(63,143,95,.2)}
 section{padding-block:3.4rem}
@@ -119,6 +120,7 @@ hr.run{border:none;border-top:1px dashed var(--line);margin:2.4rem 0}
 .card .more{margin-top:auto;font-family:var(--f-mono);font-size:.76rem;letter-spacing:.05em;text-decoration:none;color:var(--cyan-ink);display:inline-flex;align-items:center;gap:.4em;cursor:pointer}
 .card .more:hover{color:var(--cyan)}
 .schematic{background:var(--navy-2);border:1px solid var(--navy-line);border-radius:6px;aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.schematic img{width:100%;height:100%;object-fit:cover}
 .schematic .cap{position:absolute;left:0;right:0;bottom:0;padding:.5rem .8rem;background:linear-gradient(transparent,rgba(0,0,0,.55));font-family:var(--f-mono);font-size:.68rem;letter-spacing:.08em;color:var(--on-navy-muted);text-transform:uppercase}
 .check-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.7rem}
 .check-list li{display:flex;gap:.7em;align-items:flex-start;font-size:.95rem;color:var(--ink)}
@@ -276,15 +278,7 @@ footer.site{background:var(--navy);color:var(--on-navy-muted);border-top:1px sol
           </div>
         </div>
         <div class="hero-schematic">
-          <div class="schematic" role="img" aria-label="live network topology">
-            <svg width="70%" height="70%" viewBox="0 0 200 120" fill="none" stroke="#2bc4d8" stroke-width="1">
-              <rect x="10" y="10" width="180" height="100" rx="3" stroke="#243444"/>
-              <circle cx="50" cy="60" r="7"/><circle cx="100" cy="30" r="7"/><circle cx="150" cy="60" r="7"/><circle cx="100" cy="90" r="7"/>
-              <path d="M50 60L100 30M100 30L150 60M150 60L100 90M100 90L50 60M100 30L100 90" stroke-opacity=".5"/>
-              <circle cx="100" cy="60" r="3" fill="#3f8f5f" stroke="none"/>
-            </svg>
-            <span class="cap mono">live network topology</span>
-          </div>
+          <img src="https://plain-enam-prod-public.komododecks.com/202610/14/3P2FygURmzyy2kau2aCw/image.jpg" alt="Savant Networks banner – network design and security engineering" loading="lazy">
         </div>
       </div>
     </section>
@@ -319,31 +313,51 @@ footer.site{background:var(--navy);color:var(--on-navy-muted);border-top:1px sol
 
     <section class="band-dark">
       <div class="wrap">
-        <div class="section-head">
-          <div><span class="label">Why Choose Us</span><h2>Built on local insight and real field experience</h2></div>
-          <a class="btn btn-ghost" data-nav="why-choose-us">All five reasons <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 8h11M9 3l5 5-5 5" /></svg></a>
+        <div class="grid grid-2" style="align-items:center;gap:2.6rem">
+          <div>
+            <div class="section-head" style="margin-bottom:1.6rem">
+              <div><span class="label">Why Choose Us</span><h2>Built on local insight and real field experience</h2></div>
+            </div>
+            <ul class="check-list on-navy" style="max-width:62ch">
+              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 8.5l3.2 3.2L14 3" /></svg><span><b>Trusted cybersecurity professionals.</b> Our team holds hands-on field experience across network design, configuration, and auditing &mdash; not just certifications on a wall. We test our own work the way an attacker would before we call it finished.</span></li>
+              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 8.5l3.2 3.2L14 3" /></svg><span><b>Local Belize insight, customized security.</b> We're based in Belize City and design for the realities of operating here: power conditions, connectivity options, import timelines, and the specific regulatory landscape local banks, hotels, and government offices work under.</span></li>
+              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 8.5l3.2 3.2L14 3" /></svg><span><b>Post-pandemic digital threat protection.</b> Remote access, cloud services, and connected devices expanded faster than most organizations' security did. We build protections for the network you actually run today, not the one you had five years ago.</span></li>
+            </ul>
+            <div class="btn-row">
+              <a class="btn btn-ghost" data-nav="why-choose-us">All five reasons <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 8h11M9 3l5 5-5 5" /></svg></a>
+            </div>
+          </div>
+          <div>
+            <div class="schematic" style="aspect-ratio:1/1;max-width:420px;margin:0 auto">
+              <img src="https://plain-enam-prod-public.komododecks.com/202610/14/oHBdSYs0ZlcUNWyg35Rd/image.png" alt="Savant Networks team and field experience" loading="lazy">
+            </div>
+          </div>
         </div>
-        <ul class="check-list on-navy" style="max-width:62ch">
-          <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 8.5l3.2 3.2L14 3" /></svg><span><b>Trusted cybersecurity professionals.</b> Our team holds hands-on field experience across network design, configuration, and auditing &mdash; not just certifications on a wall. We test our own work the way an attacker would before we call it finished.</span></li>
-          <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 8.5l3.2 3.2L14 3" /></svg><span><b>Local Belize insight, customized security.</b> We're based in Belize City and design for the realities of operating here: power conditions, connectivity options, import timelines, and the specific regulatory landscape local banks, hotels, and government offices work under.</span></li>
-          <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 8.5l3.2 3.2L14 3" /></svg><span><b>Post-pandemic digital threat protection.</b> Remote access, cloud services, and connected devices expanded faster than most organizations' security did. We build protections for the network you actually run today, not the one you had five years ago.</span></li>
-        </ul>
       </div>
     </section>
 
     <section class="tight">
       <div class="wrap">
-        <span class="label">Who We Serve</span>
-        <h2 style="margin-bottom:1.2rem">Sector-specific networks, not one-size-fits-all</h2>
-        <div class="brand-strip">
-          <a class="brand-chip" data-nav="who-we-serve" data-anchor="banking">Banking &amp; Financial Institutions</a>
-          <a class="brand-chip" data-nav="who-we-serve" data-anchor="education">Educational Institutions</a>
-          <a class="brand-chip" data-nav="who-we-serve" data-anchor="hospitality">Hotels, Resorts &amp; Tourism</a>
-          <a class="brand-chip" data-nav="who-we-serve" data-anchor="hospitals">Hospitals</a>
-          <a class="brand-chip" data-nav="who-we-serve" data-anchor="government">Government Departments</a>
-          <a class="brand-chip" data-nav="who-we-serve" data-anchor="call-centers">Call Centers / BPOs</a>
-          <a class="brand-chip" data-nav="who-we-serve" data-anchor="restaurants-casinos">Restaurants &amp; Casinos</a>
-          <a class="brand-chip" data-nav="who-we-serve" data-anchor="businesses">Brick and Mortar Businesses</a>
+        <div class="grid grid-2" style="align-items:center;gap:2.6rem">
+          <div>
+            <span class="label">Who We Serve</span>
+            <h2 style="margin-bottom:1.2rem">Sector-specific networks, not one-size-fits-all</h2>
+            <div class="brand-strip">
+              <a class="brand-chip" data-nav="who-we-serve" data-anchor="banking">Banking &amp; Financial Institutions</a>
+              <a class="brand-chip" data-nav="who-we-serve" data-anchor="education">Educational Institutions</a>
+              <a class="brand-chip" data-nav="who-we-serve" data-anchor="hospitality">Hotels, Resorts &amp; Tourism</a>
+              <a class="brand-chip" data-nav="who-we-serve" data-anchor="hospitals">Hospitals</a>
+              <a class="brand-chip" data-nav="who-we-serve" data-anchor="government">Government Departments</a>
+              <a class="brand-chip" data-nav="who-we-serve" data-anchor="call-centers">Call Centers / BPOs</a>
+              <a class="brand-chip" data-nav="who-we-serve" data-anchor="restaurants-casinos">Restaurants &amp; Casinos</a>
+              <a class="brand-chip" data-nav="who-we-serve" data-anchor="businesses">Brick and Mortar Businesses</a>
+            </div>
+          </div>
+          <div>
+            <div class="schematic" style="aspect-ratio:454/550;max-width:380px;margin:0 auto">
+              <img src="https://plain-enam-prod-public.komododecks.com/202610/14/roCM5enSCmfBlWXnxbM7/image.png" alt="Savant Networks sector coverage" loading="lazy">
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -830,19 +844,16 @@ footer.site{background:var(--navy);color:var(--on-navy-muted);border-top:1px sol
     }
     if(target) target.hidden = false;
 
-    // Highlight active nav
     document.querySelectorAll("nav.primary > a").forEach(function(a){
       a.classList.toggle("active", a.getAttribute("data-nav") === name);
     });
 
-    // Scroll to top or to anchor
     if(anchor){
       var el = document.getElementById(anchor);
       if(el){ el.scrollIntoView({behavior:"smooth", block:"start"}); return; }
     }
     window.scrollTo({top:0, behavior:"instant" in window ? "instant" : "auto"});
 
-    // Close mobile nav
     var nav = document.querySelector("nav.primary");
     if(nav) nav.classList.remove("open");
     document.body.style.overflow = "";
@@ -883,7 +894,6 @@ footer.site{background:var(--navy);color:var(--on-navy-muted);border-top:1px sol
       showPage(name, anchor);
       history.replaceState(null, "", "#" + name);
     });
-    // In-page anchor links (e.g. #services, #banking)
     document.addEventListener("click", function(e){
       var a = e.target.closest('a[href^="#"]');
       if(!a) return;
@@ -970,7 +980,6 @@ footer.site{background:var(--navy);color:var(--on-navy-muted);border-top:1px sol
   }
 
   ready(function(){
-    // Build service pages
     document.querySelectorAll('.page[data-service]').forEach(buildServicePage);
     initNav();
     initRouting();
@@ -979,7 +988,6 @@ footer.site{background:var(--navy);color:var(--on-navy-muted);border-top:1px sol
     initForms();
     initTechTips();
 
-    // Initial route from hash
     var hash = (location.hash || "").replace(/^#/, "");
     if(hash && document.querySelector('.page[data-page="'+hash+'"]')) showPage(hash);
     else showPage("home");
