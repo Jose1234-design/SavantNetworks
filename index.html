@@ -21,7 +21,6 @@
   --red:#b8503f;
   --on-navy:#dbe4ea;
   --on-navy-muted:#8fa2b3;
-  --logo-blue:#1b6a9c;
 
   /* type */
   --f-display:"IBM Plex Sans Condensed", "Arial Narrow", sans-serif;
@@ -50,7 +49,6 @@
     --red:#e07a67;
     --on-navy:#dbe4ea;
     --on-navy-muted:#8fa2b3;
-    --logo-blue:#2a82b8;
     color-scheme:dark;
   }
 }
@@ -72,7 +70,6 @@
   --red:#e07a67;
   --on-navy:#dbe4ea;
   --on-navy-muted:#8fa2b3;
-  --logo-blue:#2a82b8;
   color-scheme:dark;
 }
 
@@ -145,7 +142,7 @@ code,.code{font-family:var(--f-mono)}
 
 /* ---------- header / nav ---------- */
 header.site{
-  background:linear-gradient(135deg, var(--navy) 0%, #0e2a3d 60%, var(--logo-blue) 140%);
+  background:var(--navy);
   border-bottom:1px solid var(--navy-line);
   position:sticky;
   top:env(safe-area-inset-top,0px);
@@ -164,8 +161,22 @@ header.site{
 .brand-text{display:flex;flex-direction:column;line-height:1.05}
 .brand-text b{font-family:var(--f-display);font-size:1.12rem;letter-spacing:.03em;color:var(--on-navy)}
 .brand-text span{font-family:var(--f-mono);font-size:.6rem;letter-spacing:.2em;color:var(--cyan)}
-.brand-logo{height:56px;width:auto;display:block}
-.brand-logo-footer{height:40px;width:auto;display:block}
+.brand-logo{
+  height:56px;
+  width:auto;
+  display:block;
+  background:#fff;
+  padding:4px 8px;
+  border-radius:4px;
+}
+.brand-logo-footer{
+  height:40px;
+  width:auto;
+  display:block;
+  background:#fff;
+  padding:4px 8px;
+  border-radius:4px;
+}
 @media (max-width:860px){.brand-logo{height:48px}}
 
 nav.primary{display:flex;align-items:center;gap:1.9rem}
@@ -245,12 +256,7 @@ nav.primary > a.active{color:var(--on-navy);border-color:var(--cyan)}
 @media (min-width:861px){.nav-close{display:none}}
 
 /* ---------- hero ---------- */
-.hero{
-  background:
-    radial-gradient(circle at 80% 20%, rgba(27,106,156,.45), transparent 55%),
-    linear-gradient(135deg, var(--navy) 0%, var(--navy-2) 60%, #0e2a3d 100%);
-  color:var(--on-navy);border-bottom:1px solid var(--navy-line);position:relative;overflow:hidden;
-}
+.hero{background:var(--navy);color:var(--on-navy);border-bottom:1px solid var(--navy-line);position:relative;overflow:hidden}
 .hero .wrap{padding-block:3.6rem 3rem;position:relative;z-index:2}
 .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:3rem;align-items:center}
 @media (max-width:900px){.hero-grid{grid-template-columns:1fr}}
@@ -265,10 +271,7 @@ section{padding-block:3.4rem}
 section.tight{padding-block:2.2rem}
 .section-head{display:flex;justify-content:space-between;align-items:flex-end;gap:2rem;margin-bottom:2rem;flex-wrap:wrap}
 .section-head .label{margin-bottom:.5rem}
-.band-dark{
-  background:linear-gradient(135deg, var(--navy) 0%, #0e2a3d 100%);
-  color:var(--on-navy);border-top:1px solid var(--navy-line);border-bottom:1px solid var(--navy-line);
-}
+.band-dark{background:var(--navy);color:var(--on-navy);border-top:1px solid var(--navy-line);border-bottom:1px solid var(--navy-line)}
 .band-dark h2,.band-dark h3{color:#fff}
 .band-dark p{color:var(--on-navy-muted)}
 .band-alt{background:var(--surface-2)}
@@ -471,8 +474,7 @@ hr.run{border:none;border-top:1px dashed var(--line);margin:2.4rem 0}
 
 /* ---------- cta band ---------- */
 .cta-band{
-  background:linear-gradient(135deg, var(--navy) 0%, #0e2a3d 100%);
-  color:var(--on-navy);border-radius:6px;
+  background:var(--navy);color:var(--on-navy);border-radius:6px;
   padding:2.6rem;display:flex;justify-content:space-between;align-items:center;gap:2rem;flex-wrap:wrap;
   border:1px solid var(--navy-line);
 }
@@ -485,10 +487,7 @@ hr.run{border:none;border-top:1px dashed var(--line);margin:2.4rem 0}
 .crumb a:hover{color:var(--cyan)}
 
 /* ---------- footer ---------- */
-footer.site{
-  background:linear-gradient(135deg, var(--navy) 0%, #0e2a3d 100%);
-  color:var(--on-navy-muted);border-top:1px solid var(--navy-line);
-}
+footer.site{background:var(--navy);color:var(--on-navy-muted);border-top:1px solid var(--navy-line)}
 .foot-top{
   display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:2.4rem;
   padding-block:3rem 2rem;
@@ -535,7 +534,7 @@ footer.site{
 <header class="site">
   <div class="wrap nav-row">
     <a class="brand" href="index.html" aria-label="Savant Networks home">
-      <img src="logo-shield.png" alt="Savant Networks" class="brand-logo">
+      <img src="https://www.savantbelize.com/logo-shield.png" alt="Savant Networks" class="brand-logo" onerror="this.onerror=null;this.src='logo-shield.png';">
     </a>
     <nav class="primary" aria-label="Primary">
       <button class="nav-close" aria-label="Close menu">
@@ -741,7 +740,7 @@ footer.site{
   <div class="wrap foot-top">
     <div>
       <a class="brand" href="index.html" style="margin-bottom:1rem;display:inline-flex">
-        <img src="logo-text.png" alt="Savant Networks" class="brand-logo-footer">
+        <img src="https://www.savantbelize.com/logo-text.png" alt="Savant Networks" class="brand-logo-footer" onerror="this.onerror=null;this.src='logo-text.png';">
       </a>
       <p style="max-width:34ch;font-size:.88rem">Network design, security auditing, and skills training for organizations across Belize.</p>
       <div class="social-strip" aria-label="Social media">
